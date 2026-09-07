@@ -169,9 +169,13 @@ calf work.
 
 **Arms giant set** (constant, 3–4 rounds): curl variant · close-grip push-up or squeeze press · triceps extension variant
 
-**Finisher** (2–4 rounds): battle rope chest fly → burpee flow. 10 s rope fly, 5 burpees, repeat
+**Finisher** (2–4 rounds): battle rope chest fly → push-up flow. 10 s rope fly, 5 push-ups, repeat
 to 60 s. This replaces the slam-ball metabolic role.
-*Travel Worst:* push-up → plank-to-push-up flow, same timing.
+*Travel Worst:* rope fly → plank-to-push-up flow, same timing.
+
+> **No burpees here**, and no jump work — a burpee is a squat-and-jump, which would violate the
+> zero-legs rule on the day it matters most. This is exactly the kind of creep the rule exists to
+> catch.
 
 ---
 
