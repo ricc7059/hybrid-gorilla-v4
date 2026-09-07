@@ -134,8 +134,8 @@ The round is the atomic unit. Each round independently carries **movement** (it 
 
 1. ~~Repo scaffold~~ ✅
 2. ~~Collect source volumes → extract the method → rotation logic~~ ✅ — see [`METHOD.md`](METHOD.md)
-3. **Rotation table** — 4 variants per slot, mapped to Steve's equipment and the three gym modes
-4. Session design — the seven daily templates, with real per-day time budgets ← *the real work*
+3. ~~**Rotation table** — 4 variants per slot, mapped to equipment and gym modes~~ ✅ — see [`ROTATION.md`](ROTATION.md)
+4. Session design — write the seven daily templates out as concrete lettered blocks with per-round prescriptions ← *next*
 5. Data model — round as atomic unit, block types, individually checkable rounds
 6. App build — carry 3.0 architecture forward into a new single-file `index.html`
 7. Deploy to GitHub Pages
