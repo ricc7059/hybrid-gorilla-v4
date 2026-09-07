@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────────
+# Source material — paid, non-redistributable. Never commit.
+# Reference PDFs live OUTSIDE this repo, in:
+#   ~/hybrid-gorilla-reference/sklar-volumes/
+# These patterns are belt-and-suspenders in case one wanders in.
+# ─────────────────────────────────────────────────────────────
+*.pdf
+*.epub
+*sklar*
+*Sklar*
+*fit365*
+*Fit365*
+reference/
+sklar-volumes/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Scratch
+scratch/
+tmp/
