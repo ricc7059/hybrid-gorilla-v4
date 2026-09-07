@@ -15,6 +15,28 @@ Decisions locked, work outstanding, questions open. Companion to [`BRIEF.md`](BR
 | Effort scale | v5 vocabulary. No 1RM % anchors. `Challenge` retired in favor of `As Heavy as Possible to Complete` | from brief |
 | Source material | Method only. No verbatim workouts, tables, or sequences. PDFs stay outside the repo | from brief |
 
+### Equipment
+
+Steve has the full recommended equipment list **except balls of any kind** — no slam balls, no medicine balls.
+
+| Available | Not available |
+|---|---|
+| Barbells · Dumbbells · Kettlebells · Adjustable bench · Cable station · Resistance bands · Pull-up station/bars · Lebert Equalizers · Parallettes · Battle rope · Suspension trainer | **Slam balls · Medicine balls** |
+
+This matters more than it looks. Slam-ball work carries the explosive/metabolic conditioning slot throughout the source material — squat slams, squat-to-ascending-overhead-press ladders, descending-press complexes. That whole family needs substitution, and the substitutes must respect the standing preference for **free weights and cables only**, with landmine as an alternate rather than a prescription.
+
+**Substitution map for the ball-driven patterns:**
+
+| Pattern being replaced | Substitute | Why |
+|---|---|---|
+| Squat slam (explosive triple extension → ground) | **Kettlebell swing** | Closest available explosive hip hinge; already free-weight |
+| Squat to ascending overhead press ladder | **KB or DB clean to ascending overhead press** | Preserves the ladder exactly; clean-to-press already native to the method |
+| Squat-slam metabolic finisher | **Battle rope** (jump slams, anacondas, jumping jacks) | Already used as the source's own listed alternate; he has the rope |
+| Squat side-lunge slam complex | **Goblet squat → lateral lunge complex** | Same movement chain, KB loaded |
+| Descending-press slam complex | **DB thruster, descending reps** | Squat-to-press in one movement, reps ladder down |
+
+No slot is lost — the rope covers metabolic, the kettlebell covers explosive. Worth noting the battle rope becomes load-bearing in 4.0 in a way it wasn't in 3.0, so Travel Best / Travel Worst modes need their own alternates for every rope prescription.
+
 ### Effort ladder
 
 Ascending:
@@ -100,7 +122,7 @@ The round is the atomic unit. Each round independently carries **movement** (it 
 
 1. ~~Repo name~~ — **resolved**: `hybrid-gorilla-v4`
 2. ~~Running block anchor~~ — **resolved**: continues from Aug 17 2026
-3. **Nutrition phase.** Whether to run a maintenance or slight-surplus block. This is a separate decision from programming, but it determines whether the hypertrophy work can actually pay off. Seven days running + seven days lifting at a ~400 cal deficit at 43 is why composition stalled; the lift rebuild fixes the *pump*, not the *size*. Unresolved.
+3. **Nutrition phase.** **Surplus ruled out** by decision (2026-09-07). Deficit vs. maintenance modeled side by side in [`NUTRITION.md`](NUTRITION.md) — recommendation is maintenance. **Still to decide**, and it gates session design: the round counts, finisher volume, and intensifier schedule differ between the two. Headline from the model: at this training volume a −400 deficit likely puts energy availability *below* the low-energy-availability threshold (~29 vs. a floor of 30 kcal/kg FFM), which would explain the stall mechanistically and predicts no lift restructuring fixes composition while it holds.
 
 ---
 

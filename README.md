@@ -20,7 +20,7 @@ Two complaints, two different causes.
 
 **"No pump or fatigue during the session."** This one is programming, and it's fixable. 3.0 was built to protect the running and overcorrected — four of seven lift sessions sit at RIR 3 and cap at ~25 minutes. Only Monday and Wednesday are genuinely hard. Three sets shy of failure on a lateral raise produces neither stimulus nor sensation. Worse, the 3.0 lift template is byte-identical in every block, forever: no exercise rotation, no structural novelty across an entire 8-week cycle.
 
-**"Size and composition have stalled."** This one is **not** programming. Seven days a week of running plus seven days a week of lifting at a ~400 calorie deficit, at 43, produces exactly this outcome. No restructuring of the lift program fixes it. It's flagged here rather than silently programmed around — see [Open Questions](docs/DESIGN.md#open-questions).
+**"Size and composition have stalled."** This one is **not** programming. Seven days a week of running plus seven days a week of lifting at a ~400 calorie deficit, at 43, produces exactly this outcome. No restructuring of the lift program fixes it. Modeled properly in [`NUTRITION.md`](docs/NUTRITION.md): the useful lens is *energy availability*, not calorie balance, and at this training volume the current deficit likely sits below the threshold where the body starts suppressing the anabolic signaling hypertrophy depends on. That makes the environment hostile to building rather than merely neutral — and it gates how aggressively 4.0 gets built.
 
 ---
 
