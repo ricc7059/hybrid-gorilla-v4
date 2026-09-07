@@ -76,15 +76,23 @@ Applies to Monday heavy upper and Wednesday heavy lower, replacing flat `3 × 6�
 
 ---
 
-## Blocked
+## ~~Blocked~~ — cleared 2026-09-07
 
-### Rotation table — needs more source volumes
+### Rotation table — **unblocked**
 
-Sklar never repeats a workout inside a 28-day cycle. 4.0 should rotate exercise selection across the 8-week block: same movement pattern per slot, rotating implement and angle across ~4 variants.
+Five volumes read (May 2020, June 2020, Volume 01, v5, v6). The rotation logic is no longer a guess:
 
-**Two volumes (July 2020 and v5) is not enough of a sample to infer the rotation logic.** Before the rotation table can be finalized, pull the **leg slot, shoulder slot, and chest slot** across three or four volumes.
+> One slot, one `TARGET:` muscle group, one movement pattern, four implement/angle variants, a rotating wave shape on the primary, and a deliberately boring supporting cast.
 
-→ Drop additional volumes in `~/hybrid-gorilla-reference/sklar-volumes/`. That folder's README lists exactly what gets extracted.
+Full analysis in [`METHOD.md`](METHOD.md). Three findings that changed the plan:
+
+1. **The brief's premise about 1RM anchors was slightly off.** Volume 01 had already dropped the percentages — it wasn't a v5 change. The whole late era abandons percentage-based prescription in favor of effort-as-condition. Strengthens the case for adopting the vocabulary wholesale.
+2. **Round counts fell over time** (Volume 01: 6–8 · v6: 2–4) while structural complexity rose. Take the v6 direction — round count is exactly where the running tax gets paid.
+3. **There are five wave shapes, not one** — Ramp, Classic, Pyramid, Double Wave, Autoregulated Ascent. And waves get applied to *isolation*, not just compounds. A waved lateral raise is the direct answer to the pump problem and costs the same time as three flat sets.
+
+### Data model — sharpened
+
+The round is the atomic unit. Each round independently carries **movement** (it can change mid-block), reps, effort label, an optional effort *condition* ("failure at or before 20 reps"), and an optional load back-reference ("same weight as round 3"). Change-list item #8 is confirmed and larger than first scoped. Alternates ("X or Y") are a schema field, not a footnote — they map straight onto the gym modes.
 
 ---
 
@@ -99,8 +107,9 @@ Sklar never repeats a workout inside a 28-day cycle. 4.0 should rotate exercise 
 ## Build order
 
 1. ~~Repo scaffold~~ ✅
-2. Collect additional source volumes → extract leg/shoulder/chest slots → **rotation table**
-3. Session design — the seven daily templates, per day, with real time budgets
-4. Data model — per-round prescription array, block types, individually checkable rounds
-5. App build — carry 3.0 architecture forward into a new single-file `index.html`
-6. Deploy to GitHub Pages
+2. ~~Collect source volumes → extract the method → rotation logic~~ ✅ — see [`METHOD.md`](METHOD.md)
+3. **Rotation table** — 4 variants per slot, mapped to Steve's equipment and the three gym modes
+4. Session design — the seven daily templates, with real per-day time budgets ← *the real work*
+5. Data model — round as atomic unit, block types, individually checkable rounds
+6. App build — carry 3.0 architecture forward into a new single-file `index.html`
+7. Deploy to GitHub Pages
