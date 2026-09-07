@@ -8,9 +8,22 @@ Storage key: `hybrid-gorilla-v4`
 
 Successor to [Hybrid Gorilla 3.0](https://github.com/ricc7059/hybrid-gorilla-fullbody), which stays live and untouched. 4.0 rebuilds the **lifting** side around block programming — lettered blocks, wave loading, effort labels, and exercise rotation. The running program is out of scope and carries over verbatim.
 
-> **Status: scaffolding.** The program is designed but not yet written. See
-> [`docs/DESIGN.md`](docs/DESIGN.md) for decisions locked and questions open, and
-> [`docs/BRIEF.md`](docs/BRIEF.md) for the originating build brief.
+### ▸ [ricc7059.github.io/hybrid-gorilla-v4](https://ricc7059.github.io/hybrid-gorilla-v4/)
+
+**Opens Monday, September 14 2026.** Until then the app shows a preview of week 1.
+
+| | |
+|---|---|
+| **Ramp block** | Sep 14 – Oct 11 · V1–V4, one exposure each · load discovery, no intensifiers |
+| **Block 1** | Oct 12 – Dec 6 · full 8 weeks · **synced with running Block B** |
+| **Deload** | Week 8 of every block, plus ramp week 4. 3-mile TT that Saturday. |
+
+The ramp block exists to sync the two calendars: its deload lands on the running deload
+(Oct 5–11), so from Oct 12 the lift and run blocks stay aligned permanently.
+
+**Docs:** [`METHOD.md`](docs/METHOD.md) — the abstracted method · [`ROTATION.md`](docs/ROTATION.md) — 4 variants per slot ·
+[`SESSIONS.md`](docs/SESSIONS.md) — the seven templates · [`NUTRITION.md`](docs/NUTRITION.md) — deficit vs. maintenance ·
+[`DESIGN.md`](docs/DESIGN.md) — decisions and open questions · [`BRIEF.md`](docs/BRIEF.md) — the originating brief
 
 ---
 

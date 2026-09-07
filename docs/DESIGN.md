@@ -9,6 +9,10 @@ Decisions locked, work outstanding, questions open. Companion to [`BRIEF.md`](BR
 | Decision | Value | Date |
 |---|---|---|
 | Repo name | `hybrid-gorilla-v4` | 2026-09-07 |
+| Lift anchor | **Mon Sep 14 2026**, independent of the running anchor | 2026-09-07 |
+| Block shape | **4-week ramp** (V1–V4, one exposure, no intensifiers) → then 8-week blocks from **Oct 12**, permanently synced with running Block B | 2026-09-07 |
+| Scenario | **Both shipped**, toggled in-app and persisted | 2026-09-07 |
+| Deployment | GitHub Pages — [ricc7059.github.io/hybrid-gorilla-v4](https://ricc7059.github.io/hybrid-gorilla-v4/) | 2026-09-07 |
 | Storage key | `hybrid-gorilla-v4` — 3.0 data untouched, not migrated | from brief |
 | Running anchor | **Continues from Mon Aug 17 2026.** No reset — 4.0 picks up mid-block | 2026-09-07 |
 | Scope | Lifting only. Running out of scope and carried over verbatim | from brief |
@@ -136,6 +140,11 @@ The round is the atomic unit. Each round independently carries **movement** (it 
 2. ~~Collect source volumes → extract the method → rotation logic~~ ✅ — see [`METHOD.md`](METHOD.md)
 3. ~~**Rotation table** — 4 variants per slot, mapped to equipment and gym modes~~ ✅ — see [`ROTATION.md`](ROTATION.md)
 4. ~~Session design — seven daily templates as lettered blocks with per-round prescriptions~~ ✅ — see [`SESSIONS.md`](SESSIONS.md)
-5. Data model — round as atomic unit, block types, individually checkable rounds ← *next* (requirements enumerated in [`SESSIONS.md`](SESSIONS.md) §11)
-6. App build — carry 3.0 architecture forward into a new single-file `index.html`
-7. Deploy to GitHub Pages
+5. ~~Data model — round as atomic unit, block types, individually checkable rounds~~ ✅
+6. ~~App build — 3.0 architecture carried forward into a new single-file `index.html`~~ ✅
+7. ~~Deploy to GitHub Pages~~ ✅ — [live](https://ricc7059.github.io/hybrid-gorilla-v4/)
+
+**Remaining:**
+- Decide deficit vs. maintenance for real (app ships both; see [`NUTRITION.md`](NUTRITION.md) §8). Run the 3-week intake audit first.
+- Watch Nordic curl placement in ramp weeks 1–2 — move to Sunday if Thursday's quality run degrades.
+- Battle rope carries four finishers; the Travel Worst alternates are in place but untested in a real hotel gym.
