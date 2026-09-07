@@ -1,217 +1,221 @@
 # Nutrition — Deficit vs. Maintenance
 
-Two scenarios modeled side by side. **Surplus is off the table** by decision, so it isn't
-modeled here.
+Two scenarios modeled side by side on **real inputs** (2026-09-07). Surplus is off the table by
+decision and isn't modeled.
 
-This decision gates session design, so it comes first. The round counts, finisher volume, and
-intensifier schedule in 4.0 should differ between these two scenarios — it is not "build the
-program, then decide what to eat."
+This decision gates session design — round counts, finisher volume, and the intensifier schedule
+differ between the two scenarios.
 
 ---
 
-## 1. Why the stall isn't really about calories
+## 1. The lens: energy availability
 
-The useful lens for a hybrid athlete is **energy availability (EA)**, not calorie balance:
+For a hybrid athlete, calorie balance is the wrong instrument. The right one is
+**energy availability (EA)** — what's left to run the body *after* training takes its cut:
 
 ```
 EA = (intake − exercise energy expenditure) ÷ kg fat-free mass
 ```
 
-It measures what's left to run the body *after* training takes its cut. The thresholds are
-well established in the sports-science literature:
-
 | EA (kcal/kg FFM/day) | State |
 |---|---|
-| **< 30** | Low energy availability. Testosterone, T3, and IGF-1 fall. Muscle protein synthesis is suppressed. Bone turnover and immune function degrade. |
-| **30–45** | Adequate. Maintenance is possible; adaptation is muted. |
+| **< 30** | Low energy availability. Testosterone, T3, IGF-1 fall. Muscle protein synthesis suppressed. |
+| **30–45** | Adequate. Maintenance possible; adaptation muted toward the bottom of the band. |
 | **~45** | Optimal for adaptation and tissue accrual. |
 
-This matters because calorie balance and energy availability come apart badly at high training
-volumes. A modest-sounding deficit stacked on top of seven days of running and seven days of
-lifting can push EA under 30 — at which point **the body actively downregulates the anabolic
-signaling that hypertrophy depends on.** That's a different problem from "not enough surplus to
-build." It means the environment is hostile to building rather than merely neutral.
-
-That, rather than the lift programming, is the most likely explanation for stalled composition.
-
 ---
 
-## 2. The model
+## 2. The model — your numbers
 
-Inputs marked ⬜ are estimates — **replace them with your real numbers** and the rest recomputes.
+| Input | Value |
+|---|---|
+| Bodyweight | **210 lb / 95.25 kg** |
+| Body fat | **12–18%** → FFM 78.1–83.8 kg (midpoint 81.0 kg) |
+| Current intake | **3,300 kcal/day** |
+| Running | **20–25 mi/wk** across 7 days |
+| Lifting | 7 sessions/wk, ~35 min at giant-set density |
 
-| Input | Example value | Notes |
-|---|---|---|
-| ⬜ Bodyweight | 175 lb / 79.4 kg | |
-| ⬜ Body fat | ~15% | → FFM ≈ 149 lb / 67.5 kg |
-| ⬜ Running volume | 35 mi/wk | 7 days; easy ×4, quality ×2, long ×1 |
-| Lifting | 7 sessions/wk | ~35 min at giant-set density |
+**RMR** (Katch-McArdle, FFM-based): `370 + (21.6 × 81.0) ≈ 2,120 kcal`
+**+ non-exercise activity and TEF** at ~1.3×: `≈ 2,756 kcal`
 
-**Resting metabolic rate** (Katch-McArdle, FFM-based — the right formula for a lean trained
-person):
-`370 + (21.6 × 67.5 kg) = 1,828 kcal`
-
-**Non-exercise activity + TEF** at ~1.3× (desk work): `1,828 × 1.3 ≈ 2,376 kcal`
-
-**Exercise energy expenditure:**
-- Running: `35 mi × 0.72 kcal/lb/mi × 175 lb ≈ 4,410/wk ≈ 630/day`
+**Exercise energy expenditure (net, above rest):**
+- Running: `22.5 mi × 0.63 kcal/lb/mi × 210 lb ≈ 2,977/wk ≈ 425/day`
 - Lifting: `7 × ~300 ≈ 2,100/wk ≈ 300/day`
-- **Total ≈ 930 kcal/day**
+- **Total ≈ 725 kcal/day**
 
-**TDEE ≈ 2,376 + 930 ≈ 3,300 kcal/day**
+**Modeled TDEE ≈ 2,756 + 725 ≈ 3,480 kcal/day**
 
-### The result
+### Result
 
-| | Intake | EA calculation | **EA** | Verdict |
-|---|---|---|---|---|
-| **Deficit (−400)** | 2,900 | (2,900 − 930) ÷ 67.5 | **29.2** | 🔴 Below the LEA threshold |
-| **Maintenance** | 3,300 | (3,300 − 930) ÷ 67.5 | **35.1** | 🟡 Adequate, not optimal |
+| | Intake | EA | Verdict |
+|---|---|---|---|
+| **Current (3,300)** | 3,300 | **31.8** | 🟡 Above the LEA line, low in the adequate band |
+| **Maintenance (~3,500)** | 3,500 | **34.3** | 🟡 Adequate |
+| **Maintenance (3,700 if your −400 is right)** | 3,700 | **36.7** | 🟢 Comfortably adequate |
 
-**This is the finding.** At the current deficit you are plausibly sitting just *under* the low-
-energy-availability line — not dramatically, but under it. That is a mechanistic explanation for
-the stall, and it predicts that no amount of lift restructuring fixes composition while it holds.
-
-Maintenance clears the threshold with room to spare but lands well short of the ~45 that's
-optimal for tissue accrual. So maintenance makes the hypertrophy work *possible*; it does not
-make it fast.
-
-### Sensitivity
-
-The conclusion is not fragile, but it moves with running volume:
-
-| Running volume | Deficit EA | Maintenance EA |
-|---|---|---|
-| 25 mi/wk | 31.8 | 37.7 |
-| **35 mi/wk** | **29.2** | **35.1** |
-| 45 mi/wk | 26.6 | 32.5 |
-
-More running pushes both scenarios down. Above ~40 mi/wk the deficit is unambiguously in LEA
-territory, and even maintenance starts to look thin.
+Across the whole 12–18% body-fat range the current figure only moves from **31.0 to 33.3** — so
+the conclusion doesn't depend on pinning your body composition down.
 
 ---
 
-## 3. Scenario A — hold the deficit
+## 3. Correction: you are not in low energy availability
 
-**What it buys:** continued fat loss, roughly 0.4 lb/week at −400.
+My earlier illustrative model used 175 lb and 35 mi/wk and landed at EA 29.2 — under the
+threshold. **Your actual numbers don't reproduce that.** At 210 lb with 20–25 mi/wk you're at
+roughly **32**, which is above the line.
 
-**What it costs:** hypertrophy, essentially entirely. Expect a brief apparent response in the
-first 3–4 weeks purely because 4.0's stimulus is genuinely novel after 3.0's unchanging template
-— then a return to stall. Run quality degrades slowly as carbohydrate availability tightens.
-Recovery debt accumulates against a 7-day running week.
+The difference is mostly running volume: at your mileage, running costs about 425 kcal/day, not
+the ~630 I'd assumed. You carry more lean mass, which raises the denominator, but you also spend
+much less on aerobic work, which raises the numerator more.
 
-**How 4.0 should be built under this scenario** — throttled deliberately:
+**So the brief's framing — "no restructuring of the lift program fixes this" — is too strong.**
+Your deficit is suppressing adaptation modestly, not shutting it down. It is not the smoking gun.
+
+### Then what did cause the stall?
+
+Three things, in what I'd now judge as descending order of importance:
+
+1. **The lift stimulus in 3.0 was genuinely insufficient.** Four of seven sessions at RIR 3,
+   capped at ~25 minutes, with a byte-identical template for an entire 8-week block. That is a
+   real and sufficient explanation on its own, and it's the one thing 4.0 directly fixes.
+2. **Concurrent-training interference.** Seven days a week of running keeps AMPK signaling
+   elevated against the mTOR signaling hypertrophy requires. Nutrition doesn't overcome this;
+   only redistributing the running would, and running is out of scope.
+3. **Training status and age.** 210 lb at 12–18% is already a well-developed physique. At 43,
+   trained, with that much existing lean mass, further hypertrophy runs at maybe 1–2 lb of lean
+   mass per *year* under good conditions. Some of the "stall" may be a calibration problem rather
+   than a physiology problem.
+
+**Net effect on the plan: the lift rebuild is now the bigger lever, and nutrition is the smaller
+one.** That inverts the brief's priority — good news, since the lift rebuild is the part we
+control.
+
+### One loose thread worth pulling
+
+You describe a −400 deficit at 3,300 intake, which implies maintenance ≈ 3,700. The model says
+≈ 3,480. If the model is closer, **your actual deficit is nearer −180 than −400** — which would
+independently explain slow fat loss.
+
+Before committing either way, worth a **2–3 week audit**: hold intake at 3,300, weigh daily,
+take the weekly average. Flat average means 3,300 *is* maintenance. That single measurement
+resolves the discrepancy and costs nothing.
+
+---
+
+## 4. Scenario A — hold the deficit
+
+**Buys:** continued fat loss. At a true −400, ~0.4 lb/wk; at a true −180, ~0.2 lb/wk.
+
+**Costs:** hypertrophy runs muted rather than absent. EA ~32 supports maintenance of lean mass
+and strength gains, but tissue accrual will be very slow. At your running volume, carbohydrate
+isn't a limiting factor — run quality should hold.
+
+**4.0 built under this scenario:**
 
 | Element | Deficit setting |
 |---|---|
-| Round counts | Low end: **3–5** |
-| Wave loading | **Keep — it's ideal here.** Delivers a genuine heavy top set at minimal total volume, which is exactly what preserves muscle in a deficit |
-| Finishers (Tue/Thu) | Keep but short — **2 rounds**. Cheap, and they deliver the sensation the pump problem is about |
-| Intensifiers | **Weeks 5–7 only**, not 3–7. Drop sets in a deficit buy fatigue more than growth |
-| Saturday rebuild | Moderate version |
-| Honest goal | Preserve muscle · fix the pump · add strength on wave top sets. **Not grow.** |
+| Round counts | **3–5** |
+| Wave loading | **Keep — ideal here.** A genuine heavy top set at minimal total volume is exactly what preserves lean mass in a deficit |
+| Finishers (Tue/Thu) | **2 rounds** |
+| Intensifiers | **Weeks 5–7 only** |
+| Saturday rebuild | Moderate |
+| Honest goal | Preserve mass · fix the pump · add strength on wave top sets |
 
-**Macros at 2,900 kcal:**
+**Macros at 3,300:**
 
 | | Target | g/kg |
 |---|---|---|
-| Protein | **190 g** | 2.4 — deliberately high; protein needs *rise* in a deficit to protect lean mass |
-| Fat | **70 g** | 0.9 — do not go below 0.8 g/kg; hormonal function is already under pressure |
-| Carbohydrate | **378 g** | 4.8 — thin for this running load. Front-load onto quality Tue/Thu and long-run Saturday |
+| Protein | **220 g** | 2.3 — raised deliberately; protein needs climb in a deficit |
+| Fat | **80 g** | 0.84 — floor is 0.8 g/kg for hormonal function |
+| Carbohydrate | **425 g** | 4.5 — comfortable at 20–25 mi/wk |
 
 ---
 
-## 4. Scenario B — maintenance
+## 5. Scenario B — maintenance
 
-**What it buys:** an anabolic-permissive environment. Slow recomposition becomes possible —
-realistically **0.5–1.5 lb of lean mass per few months**, not per month, at 43, trained, running
-seven days a week. Modest but real, and it compounds. Secondary gains show up faster than the
-muscle does: better run quality at the same heart rate, better sleep, better recovery between
-quality sessions, restored drive.
+**Buys:** EA rises to ~34–37, moving adaptation from muted to reasonable. Realistic accrual is
+still slow — call it **1–3 lb of lean mass over a full 8-week block**, and that's an optimistic
+read given training age. Secondary effects arrive faster and more reliably: better recovery
+between quality runs, better sleep, better session quality on the heavy days.
 
-**What it costs:** the scale stops moving. If you're currently losing, maintenance will *feel*
-like stopping — which is why the success metrics have to change (see §6).
+**Costs:** the scale stops moving. Fat loss pauses.
 
-**How 4.0 should be built under this scenario** — as designed:
+**The change is small.** You're 180–400 kcal from maintenance depending on whose number is right.
+That's one meal component, not a diet overhaul — which makes this a cheap experiment with a
+short path back.
+
+**4.0 built under this scenario:**
 
 | Element | Maintenance setting |
 |---|---|
 | Round counts | **4–6**, up to **8** on the slack days (Sat/Sun) |
 | Wave loading | Full — Ramp, Classic, Pyramid, Double Wave across slots |
 | Finishers (Tue/Thu) | **3–4 rounds** |
-| Intensifiers | **Weeks 3–7** as originally scoped |
+| Intensifiers | **Weeks 3–7** as scoped |
 | Saturday rebuild | Full chest/arm session |
 | Honest goal | Slow recomp with a real hypertrophic signal |
 
-**Macros at 3,300 kcal:**
+**Macros at ~3,600:**
 
 | | Target | g/kg |
 |---|---|---|
-| Protein | **165 g** | 2.1 |
-| Fat | **75 g** | 0.95 |
-| Carbohydrate | **491 g** | 6.2 — comfortable for 7-day running with two quality days and a long run |
+| Protein | **190 g** | 2.0 |
+| Fat | **85 g** | 0.9 |
+| Carbohydrate | **519 g** | 5.4 |
 
 ---
 
-## 5. Two things that apply either way
+## 6. Applies either way
 
-**Protein distribution matters more at 43 than it did at 33.** Anabolic resistance means older
-muscle needs a larger per-meal dose to trigger protein synthesis — roughly **0.4–0.55 g/kg per
-sitting**, so **32–44 g per meal across 4–5 feedings**, not 190 g arriving mostly at dinner.
-A ~40 g pre-sleep casein dose is well supported for overnight synthesis in this age group.
+**Protein distribution matters more at 43 than the total does.** Anabolic resistance means the
+per-meal dose has to clear a higher threshold: **0.4–0.55 g/kg per sitting = 40–52 g per meal**
+at your bodyweight, across 4–5 feedings. 190 g arriving mostly at dinner does noticeably less
+than 190 g spread properly. A ~40 g pre-sleep casein dose is well supported for overnight
+synthesis in this age group.
 
-**Fasted 4:30am training is a real handicap — for the lifting specifically.** For running it's
-fine and arguably useful. For hypertrophy it means training in a catabolic state at the daily
-cortisol peak with no circulating amino acids, and that compounds with a deficit.
+**Fasted 4:30am training is a real handicap — for the lifting specifically.** Fine, arguably
+useful, for the running. For hypertrophy it means training at the daily cortisol peak with no
+circulating amino acids. The brief carries fasted training over unchanged, so this is a **lever,
+not a prescription**: 20–25 g of whey or EAAs on waking would meaningfully improve the lifting
+response while leaving the fasted-run adaptations essentially intact.
 
-The brief carries fasted training over unchanged, so this is flagged as a **lever, not a
-prescription**: 20–25 g of whey or EAAs on waking would meaningfully change the lifting response
-while leaving essentially all of the fasted-run adaptations intact. It's the single
-highest-leverage change available that doesn't touch total calories. Worth considering
-independently of the deficit/maintenance decision.
+Given that nutrition turns out to be the *smaller* lever here, this one is arguably the highest-
+value nutritional change available to you — it targets the lifting directly, costs almost no
+calories, and doesn't require choosing between deficit and maintenance at all.
 
-**Deload weeks (week 8) should not drop calories.** That's when the recovery you've been
-deferring actually gets taken.
+**Deload weeks (week 8) shouldn't drop calories.** That's when deferred recovery gets taken.
 
 ---
 
-## 6. Success metrics — they differ
-
-Scale weight is the wrong instrument for the maintenance scenario, and using it will make a
-working program look like a failing one.
+## 7. Success metrics
 
 | | Deficit | Maintenance |
 |---|---|---|
-| Bodyweight | Down ~0.4 lb/wk | **Flat — this is success, not stagnation** |
+| Bodyweight | Down 0.2–0.4 lb/wk | **Flat — that's success, not stagnation** |
 | Waist circumference | Down | Flat or slowly down |
-| Wave top-set loads | Hold | **Up** |
-| Run pace at fixed HR | Flat or slowly worse | **Improves** |
-| Progress photos | Every 4 weeks | Every 4 weeks — the primary instrument here |
+| Wave top-set loads | Hold or slowly up | **Up** |
+| Run pace at fixed HR | Flat | Flat or improving |
+| Progress photos | Every 4 weeks | Every 4 weeks — the primary instrument |
 | Deload-week 3-mile TT | Flat | Flat or improving |
 
 ---
 
-## 7. Recommendation
+## 8. Recommendation
 
-**Run maintenance**, and build 4.0 at the full settings in §4.
+**Run maintenance — but the case is weaker than I first stated, and the reason has changed.**
 
-The reasoning is narrow and doesn't depend on the exact numbers: at your training volume the
-deficit is close enough to the LEA threshold that it plausibly explains the stall on its own, and
-every hour spent restructuring the lifting is wasted while that holds. You can return to a
-deficit later from a better hormonal baseline and hold more muscle through it than you would now.
+It's no longer "you're suppressing your endocrine system." It's simply that you're 180–400
+calories from a better adaptive environment, the change is trivially small, and there's no
+competing goal — you've already decided fat loss isn't the priority for this phase.
 
-If you'd rather keep losing fat first, that's entirely legitimate — but then build the **deficit
-column** of the program and set expectations accordingly. The failure mode to avoid is building
+Two caveats worth holding onto:
+
+- **Don't expect the nutrition change to be what fixes this.** On your numbers, the insufficient
+  lift stimulus in 3.0 is the better explanation for the stall. 4.0's programming is the main
+  intervention; maintenance just removes a modest brake.
+- **Audit true maintenance first** (§3). Three weeks of daily weights at 3,300 tells you whether
+  you're at −400 or −180, and that determines how much you're actually adding.
+
+If you'd rather keep the deficit, that's a perfectly reasonable call at EA 32 — build the
+**deficit column** and expect strength and pump, not size. The failure mode to avoid is building
 the maintenance program and eating the deficit, which is roughly what 3.0 became.
-
----
-
-## 8. To pin these numbers down
-
-The model above uses estimates. Three real numbers would replace them:
-
-1. **Current bodyweight** (and body fat, if you have a recent estimate)
-2. **Current daily intake** — what the −400 deficit is actually 400 below
-3. **Weekly running mileage** — or average session duration, which I can convert
-
-With those, the EA figures become yours rather than illustrative, and I can say whether the
-deficit is a near-miss or well under the line.

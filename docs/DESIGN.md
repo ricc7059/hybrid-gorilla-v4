@@ -122,7 +122,11 @@ The round is the atomic unit. Each round independently carries **movement** (it 
 
 1. ~~Repo name~~ — **resolved**: `hybrid-gorilla-v4`
 2. ~~Running block anchor~~ — **resolved**: continues from Aug 17 2026
-3. **Nutrition phase.** **Surplus ruled out** by decision (2026-09-07). Deficit vs. maintenance modeled side by side in [`NUTRITION.md`](NUTRITION.md) — recommendation is maintenance. **Still to decide**, and it gates session design: the round counts, finisher volume, and intensifier schedule differ between the two. Headline from the model: at this training volume a −400 deficit likely puts energy availability *below* the low-energy-availability threshold (~29 vs. a floor of 30 kcal/kg FFM), which would explain the stall mechanistically and predicts no lift restructuring fixes composition while it holds.
+3. **Nutrition phase.** **Surplus ruled out** by decision (2026-09-07). Deficit vs. maintenance modeled on real inputs in [`NUTRITION.md`](NUTRITION.md) — recommendation is maintenance, but weakly. **Still to decide**, and it gates session design: round counts, finisher volume, and intensifier schedule differ between the two.
+
+   Real inputs: **210 lb · 12–18% BF · 3,300 kcal/day · 20–25 mi/wk.** Energy availability computes to **~32 kcal/kg FFM** — *above* the low-availability threshold, contrary to the first pass on illustrative numbers. The deficit is a modest brake, not the cause of the stall. Revised attribution: (1) 3.0's lift stimulus was genuinely insufficient, (2) concurrent-training interference from 7-day running, (3) advanced training status at 43. **The lift rebuild is the bigger lever; nutrition is the smaller one.**
+
+   Open sub-item: the −400 figure implies maintenance ≈ 3,700 but the model says ≈ 3,480. A 2–3 week intake audit at 3,300 with daily weigh-ins resolves whether the real deficit is −400 or −180.
 
 ---
 

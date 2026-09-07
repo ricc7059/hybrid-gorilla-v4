@@ -20,7 +20,9 @@ Two complaints, two different causes.
 
 **"No pump or fatigue during the session."** This one is programming, and it's fixable. 3.0 was built to protect the running and overcorrected — four of seven lift sessions sit at RIR 3 and cap at ~25 minutes. Only Monday and Wednesday are genuinely hard. Three sets shy of failure on a lateral raise produces neither stimulus nor sensation. Worse, the 3.0 lift template is byte-identical in every block, forever: no exercise rotation, no structural novelty across an entire 8-week cycle.
 
-**"Size and composition have stalled."** This one is **not** programming. Seven days a week of running plus seven days a week of lifting at a ~400 calorie deficit, at 43, produces exactly this outcome. No restructuring of the lift program fixes it. Modeled properly in [`NUTRITION.md`](docs/NUTRITION.md): the useful lens is *energy availability*, not calorie balance, and at this training volume the current deficit likely sits below the threshold where the body starts suppressing the anabolic signaling hypertrophy depends on. That makes the environment hostile to building rather than merely neutral — and it gates how aggressively 4.0 gets built.
+**"Size and composition have stalled."** The brief attributed this entirely to nutrition. Modeled on real numbers in [`NUTRITION.md`](docs/NUTRITION.md), that turns out to be **too strong**: at 210 lb running 20–25 mi/wk, energy availability sits around 32 kcal/kg FFM — above the threshold where the body starts suppressing anabolic signaling, though low in the adequate band. The deficit is a modest brake, not the cause.
+
+The better explanations, in order: 3.0's lift stimulus was genuinely insufficient; seven-day-a-week running imposes real concurrent-training interference; and at 43 with this much existing lean mass, hypertrophy is slow by nature. **The lift rebuild is therefore the larger lever and nutrition the smaller one** — which inverts the brief's priority, and is good news, since the lift rebuild is the part under our control.
 
 ---
 
