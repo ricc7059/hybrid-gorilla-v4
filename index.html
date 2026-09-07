@@ -158,7 +158,28 @@ h2.sec { font-family:var(--display); font-size:13px; font-weight:600; letter-spa
 .ref .lad-row.l2, .ref .lad-row.l1 { border-left-color:var(--easy); }
 
 .tt { display:flex; gap:10px; align-items:center; margin-top:10px; }
-.tt input { flex:1; padding:9px 10px; background:var(--bg); border:1px solid var(--border-strong); border-radius:6px; color:var(--text); font-family:var(--mono); font-size:14px; }
+.tt input, .tt-in { padding:9px 10px; background:var(--bg); border:1px solid var(--border-strong); border-radius:6px; color:var(--text); font-family:var(--mono); font-size:14px; }
+.tt input { flex:1; }
+.tt-in { width:96px; text-align:center; }
+
+.pace-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid var(--border); }
+.pace-row:last-child { border-bottom:none; }
+.pname { font-family:var(--display); font-size:15px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+.pnote { font-size:11.5px; color:var(--text-muted); margin-top:3px; line-height:1.35; }
+.pval { font-family:var(--mono); font-size:14px; color:var(--accent); text-align:right; white-space:nowrap; }
+.pval .minmi { display:block; font-size:10.5px; color:var(--text-dim); margin-top:3px; }
+
+.deficit-banner { display:flex; gap:8px; margin-bottom:14px; }
+.deficit-banner > div { flex:1; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); padding:12px 8px; text-align:center; }
+.db-val { font-family:var(--display); font-size:21px; font-weight:600; color:var(--accent); line-height:1; }
+.db-label { font-family:var(--mono); font-size:9px; color:var(--text-muted); letter-spacing:.05em; text-transform:uppercase; margin-top:5px; }
+.macro-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:13.5px; }
+.macro-row:last-of-type { border-bottom:none; }
+.macro-row b { font-family:var(--mono); font-size:15px; }
+.macro-row.protein b { color:var(--accent); }
+.macro-row.carbs b { color:var(--quality); }
+.macro-row.fat b { color:var(--moderate); }
+.sdose { font-family:var(--mono); font-size:12px; color:var(--accent); text-align:right; white-space:nowrap; flex:none; padding-left:10px; }
 
 .modal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; z-index:100; overflow-y:auto; padding:20px 0; }
 .modal.open { display:block; }
@@ -434,6 +455,7 @@ function set(k, v){ const d = load(); d[k] = v; save(d); }
    ============================================================ */
 const _acts = {}; let _actIdx = 0;
 function regAction(fn){ const k = 'act' + (_actIdx++); _acts[k] = fn; return k; }
+function resetActions(){ _actIdx = 0; for (const k in _acts) delete _acts[k]; }
 window.triggerAction = function(k){ if (_acts[k]) _acts[k](); };
 
 /* ============================================================
@@ -645,7 +667,7 @@ function runFor(day, rs){
    VIEWS
    ============================================================ */
 let tab = 'today';
-const TABS = [['today','Today'],['week','Week'],['block','Block'],['guide','Guide']];
+const TABS = [['today','Today'],['week','Week'],['block','Block'],['paces','Paces'],['fuel','Fuel'],['guide','Guide']];
 
 function modeBar(){
   const g = [['home','🏠 Home'],['travel-best','✈ Best'],['travel-worst','✈ Worst']];
@@ -789,9 +811,118 @@ function viewGuide(){
 }
 
 /* ============================================================
+   VIEW — PACES (carried from 3.0; running is out of scope)
+   ============================================================ */
+function blockDeloadSaturday(n){          // n = 0 for the ramp block, else block number
+  const wks = n === 0 ? RAMP_WEEKS - 1 : RAMP_WEEKS + (n-1)*BLOCK_WEEKS + (BLOCK_WEEKS-1);
+  const d = new Date(LIFT_ANCHOR); d.setDate(d.getDate() + wks*7 + 5);
+  return d;
+}
+function viewPaces(){
+  const paces = [
+    ['Easy (E)','Conversational · nasal breathing · daily easy runs','7.7–8.4 mph','7:09–7:47/mi'],
+    ['Threshold (T)','Comfortably hard · ~1-hour race effort · Block A anchor','9.0–9.5 mph','6:19–6:40/mi'],
+    ['Interval (I)','5K race effort · VO2max stimulus · Block B anchor','9.5–10.5 mph','5:43–6:19/mi'],
+    ['Repetition (R)','Short / fast / full recovery · Block C anchor','10.5–11.5 mph','5:13–5:43/mi']
+  ];
+  const ls = liftState(new Date());
+  const cur = ls.ramp ? 0 : ls.block;
+  let rows = '';
+  for (let b = 0; b <= cur + 1; b++){
+    const d = blockDeloadSaturday(b);
+    const rb = RUN_BLOCKS[runState(d).idx];
+    const key = 'tt-' + (b === 0 ? 'ramp' : 'b' + b);
+    const past = Date.now() > d.getTime();
+    rows += `<div class="pace-row">
+      <div><div class="pname">${b === 0 ? 'Ramp Block' : 'Block ' + b}</div>
+        <div class="pnote">${esc(rb)} · ${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}${past?'':' · upcoming'}</div></div>
+      <div><input class="tt-in" type="text" placeholder="mm:ss" value="${esc(get(key,''))}"
+        onchange="set('${key}', this.value)"></div>
+    </div>`;
+  }
+  return `<div class="ref">
+    <div class="card"><p style="margin:0">VDOT framework (Jack Daniels), zones in <b>Peloton Tread</b> mph.
+      Recalibrate after every time trial — a faster TT shifts every zone up.
+      Roughly, each 15 s of 3-mile improvement ≈ <b>+0.2 mph</b> across the board.</p></div>
+    <div class="card">${paces.map(([n,note,v,mm]) => `<div class="pace-row">
+      <div><div class="pname">${esc(n)}</div><div class="pnote">${esc(note)}</div></div>
+      <div class="pval">${esc(v)}<span class="minmi">${esc(mm)}</span></div></div>`).join('')}</div>
+    <h2 class="sec">Time trial log</h2>
+    <div class="card">
+      <p style="margin:0 0 10px">3.00 miles, max sustainable effort, Saturday of every deload week. The rolling scoreboard.</p>
+      ${rows}
+    </div></div>`;
+}
+
+/* ============================================================
+   VIEW — FUEL
+   Supplement + fasted-training protocol carried over unchanged from 3.0.
+   Macro targets updated to current numbers and wired to the scenario toggle.
+   ============================================================ */
+const MACROS = {
+  maintenance: { cal:3600, p:190, c:519, f:85,  ea:'~35', note:'Adequate. Scale weight should stay flat — that is success, not stagnation.' },
+  deficit:     { cal:3300, p:220, c:425, f:80,  ea:'~32', note:'Above the low-availability threshold, low in the adequate band. Expect strength and pump, not size.' }
+};
+function viewFuel(){
+  const m = MACROS[scenario];
+  const supp = [
+    ['pre','⚡ Pre-Workout — ~4:00am weekdays / ~6:00am weekends (fasted)',[
+      ['L-Citrulline','6g pure / 8g malate','Works well fasted — no food interference. Blood flow, endurance output, reduced soreness. 30–45 min before training.'],
+      ['L-Leucine','3g','The most important fasted supplement in the stack. No dietary amino acids in the system — this is the only MPS trigger before training. Non-negotiable for muscle retention.'],
+      ['Beta-Alanine','1.6g','First of two daily doses. Fine fasted. Tingling may be more pronounced on an empty stomach — normal and harmless.'],
+      ['Betaine Anhydrous (TMG)','1.25g','First of two daily doses. Fine fasted. Take alongside the other pre-workout supps.']]],
+    ['post','🍳 Post-Workout / Break Fast — within 30 min of finishing',[
+      ['Protein','50g','Priority #1 and the most important meal of the day. You have been fasted through training. Real food strongly preferred; powder if needed.'],
+      ['Creatine Monohydrate','5g','Post-workout for convenience since no meal precedes training. Timing does not affect efficacy — consistency does.'],
+      ['L-Carnitine L-Tartrate','2g','Take with carbs from the break-fast meal — insulin markedly improves absorption. Reduces muscle damage, supports fat oxidation.'],
+      ['Beta-Alanine','1.6g','Second daily dose. Take with your meal.'],
+      ['Betaine Anhydrous (TMG)','1.25g','Second daily dose. Pair with break-fast meal.']]],
+    ['morning','🌅 Remaining Meals — 2–3 across the day',[
+      ['Protein',`Target ${m.p}g total`,`Break-fast covers ~50g — roughly ${m.p-50}g remaining across lunch, dinner, and snacks. At 43, per-meal dose matters more than the total: aim 40–52g per sitting.`],
+      ['Carbs',`${m.c}g`,'Front-load earlier in the day post-workout, taper toward evening. Carbs fuel recovery — do not restrict them on quality or long-run days.'],
+      ['Fat',`${m.f}g floor`,'Keep fat low around the break-fast window. Bulk of daily fat across lunch and dinner. Do not go below 0.8 g/kg — hormonal function is already under pressure.']]]
+  ];
+  return `<div class="ref">
+    ${modeBar()}
+    <div class="card"><p style="margin:0">210 lb · 12–18% BF · age 43 · modeled TDEE ~3,480 · training fasted ·
+      running 20–25 mi/wk</p></div>
+    <div class="deficit-banner">
+      <div><div class="db-val">${m.cal.toLocaleString()}</div><div class="db-label">cal/day</div></div>
+      <div><div class="db-val">${m.ea}</div><div class="db-label">energy availability</div></div>
+      <div><div class="db-val">${scenario === 'deficit' ? '0.2–0.4' : '0'}</div><div class="db-label">lb/wk</div></div>
+    </div>
+    <div class="card"><div class="macro-row protein"><span>Protein</span><b>${m.p} g</b></div>
+      <div class="macro-row carbs"><span>Carbohydrate</span><b>${m.c} g</b></div>
+      <div class="macro-row fat"><span>Fat</span><b>${m.f} g</b></div>
+      <p style="margin:10px 0 0">${esc(m.note)}</p></div>
+    <div class="warnbox"><b>Deload weeks — hold calories</b>
+      Do not cut during week 8. That is when the recovery you have been deferring actually gets taken.</div>
+    <h2 class="sec">Supplement protocol</h2>
+    ${supp.map(([slot,label,items]) => `<div class="card" style="padding:0;overflow:hidden">
+      <div class="blk-target" style="font-size:11px;color:var(--text)">${label}</div>
+      ${items.map(([n,dose,why]) => `<div class="ex"><div class="ex-top">
+        <div style="flex:1;min-width:0"><div class="ex-name">${esc(n)}</div>
+          <div class="ex-alt" style="font-style:normal">${esc(why)}</div></div>
+        <div class="sdose">${esc(dose)}</div></div></div>`).join('')}
+    </div>`).join('')}
+    <h2 class="sec">Open lever — not yet adopted</h2>
+    <div class="intens"><b>Pre-lift protein</b>
+      Fasted training is fine for the running and a real handicap for the lifting — you train at the daily
+      cortisol peak with no circulating amino acids. 20–25 g of whey or EAAs on waking would meaningfully
+      improve the lifting response while leaving fasted-run adaptations essentially intact. It targets the
+      lifting directly, costs almost no calories, and does not require choosing deficit or maintenance.
+      <br><span style="color:var(--text-dim)">Flagged, not prescribed — the brief carries fasted training over unchanged.</span></div>
+    <div class="card" style="font-size:11px;color:var(--text-dim);line-height:1.6">
+      Evidence-based recommendations from published research and hybrid athlete protocols. Not personalized
+      medical nutrition advice. Consult a physician or registered dietitian before adding new supplements.
+    </div></div>`;
+}
+
+/* ============================================================
    SHELL
    ============================================================ */
 function render(){
+  resetActions();                       // closures are re-registered every render — don't leak them
   const now = new Date();
   const ls = liftState(now), rs = runState(now);
   document.getElementById('chip').innerHTML = ls.pre
@@ -806,8 +937,8 @@ function render(){
   document.getElementById('prog').style.width = Math.round((ls.wk/total)*100) + '%';
   document.getElementById('tabs').innerHTML = TABS.map(([k,l]) =>
     `<button class="tab${tab===k?' active':''}" onclick="setTab('${k}')">${l}</button>`).join('');
-  document.getElementById('view').innerHTML =
-    tab === 'today' ? viewToday() : tab === 'week' ? viewWeek() : tab === 'block' ? viewBlock() : viewGuide();
+  const VIEWS = { today:viewToday, week:viewWeek, block:viewBlock, paces:viewPaces, fuel:viewFuel, guide:viewGuide };
+  document.getElementById('view').innerHTML = (VIEWS[tab] || viewToday)();
   document.getElementById('footdate').textContent = fmt(now);
 }
 window.setTab = t => { tab = t; window.scrollTo(0,0); render(); };
